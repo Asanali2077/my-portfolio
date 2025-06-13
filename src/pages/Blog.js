@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const articles = [
@@ -63,12 +64,12 @@ const Blog = () => {
                 {article.title}
               </h2>
               <p className="text-gray-600 mb-4">{article.excerpt}</p>
-              <a
-                href="#"
+              <Link
+                to={`/blog/${article.title.toLowerCase().replace(/\s+/g, '-')}`}
                 className="text-blue-600 hover:text-purple-600 font-medium transition-colors"
               >
                 Read More →
-              </a>
+              </Link>
             </div>
           </motion.article>
         ))}
